@@ -15,7 +15,7 @@ class TodosController < ApplicationController
   end
 
   def update
-    if @todo.update(todo_params)
+    if @todo.update(todo_params) # NOTE: outputs `Unpermitted parameters: :id, :editing` with typo fix
       render :update
     else
       render json: @todo.errors, status: :unprocessable_entity
